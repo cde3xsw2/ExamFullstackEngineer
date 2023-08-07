@@ -13,8 +13,8 @@ class SumOfTwoTest {
 
 	@Test
 	void testArrayWithDuplicateValues() {
-		Integer[] input = {3,3};
-		System.out.println(Arrays.toString(new SumOfTwo(input).find(6)));
+		Integer[] inputArray = {3,3};
+		System.out.println(Arrays.toString(new SumOfTwo(inputArray).find(6)));
 	}
 	
 	
@@ -35,6 +35,18 @@ class SumOfTwoTest {
 		Integer[] inputArray = {};
 	    Exception exception = assertThrows(IllegalArgumentException.class, () -> {
 	    	Integer[] result = new SumOfTwo(inputArray).find(null);
+	    });
+
+	    String expectedMessage = "Target number can't be null";
+	    String actualMessage = exception.getMessage();
+	    assertEquals(expectedMessage, actualMessage);
+	}
+	
+	@Test
+	void testWithEmptyArray() {
+		Integer[] inputArray = {};
+	    Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+	    	Integer[] result = new SumOfTwo(inputArray).find(6);
 	    });
 
 	    String expectedMessage = "Target number can't be null";
