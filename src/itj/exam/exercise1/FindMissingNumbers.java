@@ -24,12 +24,9 @@ public class FindMissingNumbers {
 	public int[] solve() {
 		int originalLength = input.length;
 		
-		
-		
 		Set<Integer> inputAsSet = new HashSet<Integer>(Arrays.asList(input));
 		IntStream result = IntStream.range(1, originalLength+1).filter(e->!inputAsSet.contains(e));
 		return result.toArray();
-		
 	}
 	
 	

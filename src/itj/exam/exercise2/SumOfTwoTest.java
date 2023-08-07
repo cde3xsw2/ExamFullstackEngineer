@@ -14,7 +14,7 @@ class SumOfTwoTest {
 	@Test
 	void testArrayWithDuplicateValues() {
 		Integer[] input = {3,3};
-		System.out.println(Arrays.toString(new SumOfTwo(input) .find(6)));
+		System.out.println(Arrays.toString(new SumOfTwo(input).find(6)));
 	}
 	
 	
@@ -45,7 +45,7 @@ class SumOfTwoTest {
 	@Test
 	void testArrayWithNegativeNumbers() {
 		Integer[] inputArray = {-43,43};
-		Integer[] result = new SumOfTwo(inputArray) .find(0);
+		Integer[] result = new SumOfTwo(inputArray).find(0);
 		
 		int firstResult = result[0];
 		int secondResult = result[1];
@@ -56,7 +56,7 @@ class SumOfTwoTest {
 	@Test
 	void testArrayWithNullValues() {
 		Integer[] inputArray = {3,null,3};
-		Integer[] result = new SumOfTwo(inputArray) .find(6);
+		Integer[] result = new SumOfTwo(inputArray).find(6);
 		
 		int firstResult = result[0];
 		int secondResult = result[1];
@@ -66,7 +66,7 @@ class SumOfTwoTest {
 	@Test
 	void testTargetNumberNotFound() {
 		Integer[] inputArray = {3};
-		Integer[] result = new SumOfTwo(inputArray) .find(3);
+		Integer[] result = new SumOfTwo(inputArray).find(3);
 		
 		assertEquals(0, result.length);
 	}
@@ -76,7 +76,7 @@ class SumOfTwoTest {
 	void testLargeInput() {
 		Integer[] inputArray = IntStream.range(1, 10001).boxed().toArray(Integer[]::new);
 		inputArray[499]=30_000;		
-		Integer[] result = new SumOfTwo(inputArray) .find(30_200);
+		Integer[] result = new SumOfTwo(inputArray).find(30_200);
 		assertEquals(30_200,inputArray[result[0]]+inputArray[result[1]]);
 	}
 
